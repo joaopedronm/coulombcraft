@@ -51,8 +51,6 @@ body {
     animation-name: animate;
     animation-duration: 4s;
     animation-iteration-count: 1;
-    /* animation: animate 4s linear; */
-    /* animation-iteration-count: infinite; */
   }
 
   @keyframes animate {
@@ -101,6 +99,15 @@ body {
     padding: 5px;
   }
 
+  #result b {
+    font-size: 1.2em;
+  }
+
+  #result .explanation {
+    text-align: center;
+    font-size: .6em;
+  }
+
   .animation-container {
     display: flex;
     align-items: center;
@@ -136,3 +143,8 @@ body {
     margin-top: 70px;
     font-size: 10px;
   }
+
+  .none {
+    display: none;
+  }
+

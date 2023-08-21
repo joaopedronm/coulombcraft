@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   const calculateButton = document.getElementById('calculate');
   const resultDisplay = document.getElementById('result');
-  const animationContainer = document.querySelector('.animation-container');
+  // const animationContainer = document.querySelector('.animation-container');
   const sphere1 = document.querySelector('.sphere1');
   const sphere2 = document.querySelector('.sphere2');
 
+  // Função para resetar a animação das esferas
+  function resetAnimation() {
+    sphere1.style.transform = 'none';
+    sphere2.style.transform = 'none';
+    sphere1.classList.remove('none');
+    sphere2.classList.remove('none');
+  }
+
 
   calculateButton.addEventListener('click', () => {
+
+    resetAnimation()
 
     const q1 = parseFloat(document.getElementById('q1').value);
     const q1Prefix = document.getElementById('q1Prefix').value;
@@ -36,18 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
       const k = 8.99 * Math.pow(10, 9); // Constante de Coulomb (N m^2 / C^2)
       const force = k * (q1Coulombs * q2Coulombs) / Math.pow(distance, 2);
   
-      if (force > 1000 || force < 0.005) {
-        resultDisplay.textContent = `Módulo da Força Elétrica: ${force.toExponential(2)} N`;
+      if (force == 0) {
+        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toFixed(1)} N </b>
+        <br> <p class='explanation'> Como uma das cargas é nula, não há força de interação entre duas cargas. </p>`;
+      } else if (force > 1000 || force < 0.005) {
+        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toExponential(2)} N </b>`;
         // console.log('type of to exponential', typeof(resultDisplay.textContent))
       } else {
-        resultDisplay.textContent = `Módulo da Força Elétrica: ${force.toFixed(2)} N`;
+        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toFixed(2)} N </b>`;
       }
-  
+
+      
       // Update sphere positions based on charges
       const q1Class = q1 > 0 ? 'proton' : 'electron';
       const q2Class = q2 > 0 ? 'proton' : 'electron';
       sphere1.className = `sphere sphere1 ${q1Class}`;
       sphere2.className = `sphere sphere2 ${q2Class}`;
+      
   
       // A condição abaixo adiciona um + ou um - para as cargas, caso sejam postivas ou negativas
   
@@ -82,7 +97,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere2.style.transform = `translateX(calc(-40%))`;
   
       } else if (force === 0) {
-        return
+        sphere1.classList.add('none')
+        sphere2.classList.add('none')
       }
     }
 
