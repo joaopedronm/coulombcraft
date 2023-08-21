@@ -1,0 +1,138 @@
+body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3f3f3;
+  }
+  
+  body::after {
+    content: ""; /* Adicione esta linha para criar um conteúdo vazio */
+    position: absolute;
+    top: 0; /* Defina a posição vertical */
+    left: 0; /* Defina a posição horizontal */
+    width: 100%; /* Defina a largura para cobrir toda a largura do body */
+    height: 100%; /* Defina a altura para cobrir toda a altura do body */
+    background-image: url(charges-bw.png);
+    background-repeat: no-repeat;
+    opacity: 25%;
+    z-index: -1;
+  }
+
+
+  h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    position: relative;
+    font-size: 10vh;
+    color: #fff;
+    -webkit-text-stroke: 0.2vw #f3f3f3;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 1px;
+
+  }
+
+  h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #252839;
+    border-right: 2px solid #252839;
+    overflow: hidden;
+    animation-name: animate;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    /* animation: animate 4s linear; */
+    /* animation-iteration-count: infinite; */
+  }
+
+  @keyframes animate {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  h4 {
+    margin-top: 10px;
+    font-weight: normal;
+    letter-spacing: 5px;
+  }
+
+  .container {
+    text-align: left;
+    margin: 35px 10px 10px 10px;
+  }
+
+  .container-value-q1 {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .container-value-q2 {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .container-value-distance {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  span {
+    font-size: 9px;
+  }
+
+  #calculate {
+    font-family: poppins;
+    font-size: 14px;
+    margin-top: 15px;
+    padding: 5px;
+  }
+
+  .animation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .sphere {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 40px;
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: transform 3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+  }
+
+
+  .proton {
+    background-color: red;
+  }
+
+  .electron {
+    background-color: blue;
+  }
+
+  nav p {
+    margin-top: 70px;
+    font-size: 10px;
+  }

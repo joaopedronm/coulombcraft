@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esferas Separadas</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .sphere {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 50%;
+      margin: 0 20px;
+      transform-style: preserve-3d;
+      transform: translateZ(0);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2ecc71;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="sphere"></div>
+  <div class="sphere"></div>
+  <button id="joinButton">Unir Esferas</button>
+  <script>
+    const joinButton = document.getElementById('joinButton');
+    const spheres = document.querySelectorAll('.sphere');
+
+    joinButton.addEventListener('click', () => {
+      spheres[0].style.transform = 'translateX(50px)';
+      spheres[1].style.transform = 'translateX(-50px)';
+    });
+  </script>
+</body>
+</html>
