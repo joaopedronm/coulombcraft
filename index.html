@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./style.css">
-<link rel="shortcut icon" type="imagex/png" href="./icon.png">
-<title>Força Elétrica</title>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/menu.css">
+<link rel="shortcut icon" type="imagex/png" href="./charges.png">
+<title>Coulombcraft - Home</title>
 </head>
 <body>
+
+  <header>
+    <nav class="menu">
+        <ul>
+            <li><a href="./index.html" class="logo"><img src="./coulombcraft.png" alt=""></a></li>
+            <li><a href="./index.html">Início</a></li>
+            <li><a href="#">A Lei de Coulomb</a></li>
+            <li><a href="./quem-somos.html">Quem Somos</a></li>
+        </ul>
+    </nav>
+  </header>
 
   <h2 data-text="CoulombCraft">CoulombCraft</h2>
   <h4>Simulador de Força Elétrica</h4>
@@ -23,6 +35,8 @@
         <option value="u">micro (10^-6)</option>
         <option value="n">nano (10^-9)</option>
         <option value="p">pico (10^-12)</option>
+        <option value="f">femto (10^-15)</option>
+        <option value="e">e (10^-19)</option>
       </select>
     </div>
 
@@ -34,6 +48,8 @@
         <option value="u">micro (10^-6)</option>
         <option value="n">nano (10^-9)</option>
         <option value="p">pico (10^-12)</option>
+        <option value="f">femto (10^-15)</option>
+        <option value="e">e (10^-19)</option>
       </select>
     </div>
 
@@ -56,9 +72,9 @@
 
   <!-- Navbar -->
   <nav>
-    <p>© Desenvolvido por João Pedro.</p>
+    <p>© Desenvolvido por João Pedro, Eliel e Mateus.</p>
   </nav>
 
-  <script defer src="./script.js"></script>
+  <script defer src="./js/script.js"></script>
 </body>
 </html>

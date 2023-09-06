@@ -2,7 +2,6 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-family: Poppins, sans-serif;
     display: flex;
     flex-direction: column;
@@ -15,19 +14,20 @@ body {
   body::after {
     content: ""; /* Adicione esta linha para criar um conteúdo vazio */
     position: absolute;
-    top: 0; /* Defina a posição vertical */
+    top: 140px; /* Defina a posição vertical */
     left: 0; /* Defina a posição horizontal */
     width: 100%; /* Defina a largura para cobrir toda a largura do body */
-    height: 100%; /* Defina a altura para cobrir toda a altura do body */
-    background-image: url(charges-bw.png);
+    height: 60%; /* Defina a altura para cobrir toda a altura do body */
+    background-image: url(../charges-bw.png);
     background-repeat: no-repeat;
-    opacity: 25%;
+    opacity: 20%;
     z-index: -1;
   }
 
 
   h2 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: .8em;
     position: relative;
     font-size: 10vh;
     color: #fff;
@@ -140,7 +140,7 @@ body {
   }
 
   .sphere-strong {
-    transition: transform 1s ease-in-out;
+    transition: transform .9s ease-in-out;
   }
 
   .sphere-medium {
@@ -148,7 +148,7 @@ body {
   }
 
   .sphere-weak {
-    transition: transform 3.5s ease-in-out;
+    transition: transform 4s ease-in-out;
   }
 
   .proton {

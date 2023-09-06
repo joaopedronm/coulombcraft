@@ -1,0 +1,54 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.team-member {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5em 10em;
+}
+
+.team-member img {
+    width: 20%;
+}
+
+.team-member .informations {
+    width: 60%;
+}
+
+/* .team-member .informations {
+    margin: 0 10em;
+} */
+
+
+.team-member .about {
+    font-size: .8em;
+}
+
+.team-member img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.team-member h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.team-member p {
+    font-size: 16px;
+}
