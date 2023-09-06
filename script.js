@@ -1,22 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
   const calculateButton = document.getElementById('calculate');
   const resultDisplay = document.getElementById('result');
-  // const animationContainer = document.querySelector('.animation-container');
+  const completeResult = document.getElementById('complete-result')
   const sphere1 = document.querySelector('.sphere1');
   const sphere2 = document.querySelector('.sphere2');
 
   // Função para resetar a animação das esferas
-  function resetAnimation() {
-    sphere1.style.transform = 'none';
-    sphere2.style.transform = 'none';
-    sphere1.classList.remove('none');
-    sphere2.classList.remove('none');
-  }
+  // function resetAnimation() {
+  //   // sphere1.style.transform = 'none';
+  //   // sphere2.style.transform = 'none';
+  //   sphere1.classList.remove('none');
+  //   sphere2.classList.remove('none');
+
+  //   sphere1.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
+  //   sphere2.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
+  // }
+
+  sphere1.classList.add('none');
+  sphere2.classList.add('none');
+  sphere1.classList.remove('none');
+  sphere2.classList.remove('none');
 
 
   calculateButton.addEventListener('click', () => {
 
-    resetAnimation()
+    // Reset das animações
+    sphere1.classList.add('none');
+    sphere2.classList.add('none');
+
+    // Remova classes CSS relacionadas à animação antes de adicioná-las novamente
+    
 
     const q1 = parseFloat(document.getElementById('q1').value);
     const q1Prefix = document.getElementById('q1Prefix').value;
@@ -48,12 +61,15 @@ document.addEventListener('DOMContentLoaded', () => {
   
       if (force == 0) {
         resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toFixed(1)} N </b>
-        <br> <p class='explanation'> Como uma das cargas é nula, não há força de interação entre duas cargas. </p>`;
+        <br> <p class='explanation'> Como uma das cargas é nula, não há força de interação entre duas cargas. </p>`
+        completeResult.innerHTML = `Valor mais preciso: ${force} N`
       } else if (force > 1000 || force < 0.005) {
-        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toExponential(2)} N </b>`;
+        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toExponential(2)} N </b>`
+        completeResult.innerHTML = `Valor mais preciso: ${force} N`
         // console.log('type of to exponential', typeof(resultDisplay.textContent))
       } else {
-        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toFixed(2)} N </b>`;
+        resultDisplay.innerHTML = `Módulo da Força Elétrica: <b>${force.toFixed(2)} N </b>`
+        completeResult.innerHTML = `Valor mais preciso: ${force} N`
       }
 
       
@@ -82,23 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere1.innerHTML = ''
         sphere2.innerHTML = ''
       }
+
+      
   
       // Animação das cargas elétricas:
+
+      const moduleForce = Math.abs(force)
   
-      if (force > 0) {
+      if (moduleForce > 0) {
         const translation = 200; // Distância de movimento
+        sphere1.classList.add('sphere-strong')
+        sphere2.classList.add('sphere-strong')
         sphere1.style.transform = `translateX(calc(-100% - ${translation}px))`;
         sphere2.style.transform = `translateX(calc(100% + ${translation}px))`;
-  
-      } else if(force < 0) {
-  
-        const translation = 200; // Distância de movimento
+
+      } else if(moduleForce < 0 && moduleForce >= -100) {
+        sphere1.classList.add('sphere-medium')
+        sphere2.classList.add('sphere-medium')
         sphere1.style.transform = `translateX(calc(40%))`;
         sphere2.style.transform = `translateX(calc(-40%))`;
-  
-      } else if (force === 0) {
+      
+      } else if (moduleForce < -100) {
+        sphere1.classList.add('sphere-weak')
+        sphere2.classList.add('sphere-weak')
+        sphere1.style.transform = `translateX(calc(40%))`;
+        sphere2.style.transform = `translateX(calc(-40%))`;
+      
+      } else if (moduleForce === 0) {
         sphere1.classList.add('none')
         sphere2.classList.add('none')
+
       }
     }
 
