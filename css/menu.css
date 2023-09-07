@@ -48,3 +48,9 @@ header {
   .menu a:hover {
     background-color: #444;
   }
+
+  nav p {
+    text-align: center;
+    margin: 50px 0 20px 0;
+    font-size: 10px;
+  }

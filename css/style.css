@@ -159,11 +159,6 @@ body {
     background-color: blue;
   }
 
-  nav p {
-    margin-top: 70px;
-    font-size: 10px;
-  }
-
   .none {
     display: none;
   }

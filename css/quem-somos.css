@@ -14,7 +14,7 @@ h1 {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin: 20px;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -24,6 +24,8 @@ h1 {
 
 .team-member img {
     width: 20%;
+    box-shadow: -10px 0px 15px -10px #3b3b3b, /* Sombra à esquerda (vermelha) */
+        10px 0px 15px -10px #a2a2a2;
 }
 
 .team-member .informations {

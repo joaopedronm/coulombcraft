@@ -14,8 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetSpheres() {
     sphere1.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
     sphere2.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
-    sphere1.style.transform = '';
-    sphere2.style.transform = '';
+    // sphere1.style.transform = '';
+    // sphere2.style.transform = '';
     sphere1.classList.add('none');
     sphere2.classList.add('none');
   }
@@ -29,8 +29,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const q1Prefix = document.getElementById('q1Prefix').value;
     const q2 = parseFloat(document.getElementById('q2').value);
     const q2Prefix = document.getElementById('q2Prefix').value;
+    const unityDistance = document.getElementById('unity-distance').value
 
-    const distance = parseFloat(document.getElementById('distance').value) / 1000; // Converter mm para m
+    const distanceOptions = {
+      'm': 1,
+      'cm': 100,
+      'mm': 1000
+    }
+
+    const distance = parseFloat(document.getElementById('distance').value) / distanceOptions[unityDistance]; // m, cm ou mm
 
     // Verificar se os campos estão em branco
 

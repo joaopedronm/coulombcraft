@@ -15,7 +15,7 @@
         <ul>
             <li><a href="./index.html" class="logo"><img src="./coulombcraft.png" alt=""></a></li>
             <li><a href="./index.html">Início</a></li>
-            <li><a href="#">A Lei de Coulomb</a></li>
+            <li><a href="./lei-de-coulomb.html">A Lei de Coulomb</a></li>
             <li><a href="./quem-somos.html">Quem Somos</a></li>
         </ul>
     </nav>
@@ -54,8 +54,13 @@
     </div>
 
     <div class="container-value-distance">
-      <label for="distance">Distância (mm):</label>
+      <label for="distance">Distância <span>(m, cm ou mm)</span>:</label>
       <input type="number" id="distance" value="10" required>
+      <select id="unity-distance">
+        <option value="m">Metros (m)</option>
+        <option value="cm">Centímetros (cm)</option>
+        <option value="mm">Milímetros (mm)</option>
+      </select>
     </div>
     
     <button id="calculate">Calcular Força</button>
@@ -72,7 +77,7 @@
 
   <!-- Navbar -->
   <nav>
-    <p>© Desenvolvido por João Pedro, Eliel e Mateus.</p>
+    <p>© Desenvolvido por João Pedro, Eliel e Matheus.</p>
   </nav>
 
   <script defer src="./js/script.js"></script>
