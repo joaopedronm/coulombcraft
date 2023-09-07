@@ -20,6 +20,12 @@ h1 {
     align-items: center;
     justify-content: space-around;
     margin: 5em 10em;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-member:hover {
+    transform: scale(1.02);
+    opacity: 0.97;
 }
 
 .team-member img {
