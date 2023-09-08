@@ -1,0 +1,57 @@
+
+/* Estilos para telas menores (celulares e tablets) */
+@media (max-width: 768px) { 
+    body::after {
+        top: 120px; /* Ajusta a posição vertical */
+        opacity: 15%;
+    }
+
+    h2 {
+        font-size: 8vh; /* Reduz o tamanho da fonte */
+    }
+
+    input {
+        width: 75px;
+    }
+
+    .container {
+        margin: 10px 5px; /* Ajusta as margens */
+        text-align: center;
+    }
+
+    .container-value-q1,
+    .container-value-q2,
+    .container-value-distance {
+        margin-bottom: 6px; /* Reduz o espaço entre os elementos */
+        font-size: 12px; /* Ajusta o tamanho da fonte */
+    }
+
+    .container-value-q1 input,
+    .container-value-q2 input {
+        margin-left: 10px; /* Ajusta a margem esquerda */
+        margin-bottom: 10px;
+    }
+
+
+    #calculate {
+        font-size: 14px; /* Reduz o tamanho do botão */
+        margin-top: 24px; /* Ajusta a margem superior */
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    #result {
+        font-size: .9em;
+    }
+
+    .animation-container {
+        margin-top: 30px; /* Ajusta a margem superior */
+    }
+
+    .sphere {
+        width: 80px; /* Reduz o tamanho das esferas */
+        height: 80px; /* Reduz o tamanho das esferas */
+        font-size: 18px; /* Ajusta o tamanho da fonte nas esferas */
+    }
+
+}

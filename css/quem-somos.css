@@ -13,13 +13,12 @@ h1 {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 20px;
     padding: 40px 20px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 5em 10em;
+    margin: 2em 10em;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -37,10 +36,6 @@ h1 {
 .team-member .informations {
     width: 60%;
 }
-
-/* .team-member .informations {
-    margin: 0 10em;
-} */
 
 
 .team-member .about {
