@@ -49,8 +49,8 @@
     }
 
     .sphere {
-        width: 80px; /* Reduz o tamanho das esferas */
-        height: 80px; /* Reduz o tamanho das esferas */
+        width: 60px; /* Reduz o tamanho das esferas */
+        height: 60px; /* Reduz o tamanho das esferas */
         font-size: 18px; /* Ajusta o tamanho da fonte nas esferas */
     }
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Impact;
+  src: url(../fontes/impact.ttf)
+}
+
 body {
     position: relative;
     display: flex;

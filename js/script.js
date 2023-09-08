@@ -114,18 +114,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Animação das cargas elétricas:
 
+      const attractionCharges = () => {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          sphere1.style.transform = `translateX(calc(67%))`;
+          sphere2.style.transform = `translateX(calc(-67%))`;
+        } else {
+          sphere1.style.transform = `translateX(calc(40%))`;
+          sphere2.style.transform = `translateX(calc(-40%))`;
+        }
+      }
+
+      const repulsionCharges = () => {
+        if (window.matchMedia("(max-width: 768px)").matches) {
+          const translation = 15; // Distância de movimento
+          sphere1.style.transform = `translateX(calc(-70% - ${translation}px))`;
+          sphere2.style.transform = `translateX(calc(70% + ${translation}px))`;
+        }
+        else {
+          const translation = 200; // Distância de movimento
+          sphere1.style.transform = `translateX(calc(-100% - ${translation}px))`;
+          sphere2.style.transform = `translateX(calc(100% + ${translation}px))`;
+        }
+
+      }
+
       const moduleForce = Math.abs(force)
 
       if (moduleForce >= 0.1) {
         sphere1.classList.add('sphere-strong')
         sphere2.classList.add('sphere-strong')
         if (force > 0) {
-          const translation = 200; // Distância de movimento
-          sphere1.style.transform = `translateX(calc(-100% - ${translation}px))`;
-          sphere2.style.transform = `translateX(calc(100% + ${translation}px))`;
+          repulsionCharges()
         } else if (force < 0) {
-          sphere1.style.transform = `translateX(calc(40%))`;
-          sphere2.style.transform = `translateX(calc(-40%))`;
+          attractionCharges()
         } else {
           sphere1.classList.add('none')
           sphere2.classList.add('none')
@@ -135,12 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
           sphere1.classList.add('sphere-medium')
           sphere2.classList.add('sphere-medium')
           if (force > 0) {
-            const translation = 200; // Distância de movimento
-            sphere1.style.transform = `translateX(calc(-100% - ${translation}px))`;
-            sphere2.style.transform = `translateX(calc(100% + ${translation}px))`;
+            repulsionCharges()
           } else if (force < 0) {
-            sphere1.style.transform = `translateX(calc(40%))`;
-            sphere2.style.transform = `translateX(calc(-40%))`;
+            attractionCharges()
           } else {
             sphere1.classList.add('none')
             sphere2.classList.add('none')
@@ -150,12 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
           sphere1.classList.add('sphere-weak')
           sphere2.classList.add('sphere-weak')
           if (force > 0) {
-            const translation = 200; // Distância de movimento
-            sphere1.style.transform = `translateX(calc(-100% - ${translation}px))`;
-            sphere2.style.transform = `translateX(calc(100% + ${translation}px))`;
+            repulsionCharges()
           } else if (force < 0) {
-            sphere1.style.transform = `translateX(calc(40%))`;
-            sphere2.style.transform = `translateX(calc(-40%))`;
+            attractionCharges()
           } else {
             sphere1.classList.add('none')
             sphere2.classList.add('none')
