@@ -39,7 +39,7 @@ h1 {
 
 
 .team-member .about {
-    font-size: .8em;
+    font-size: .9em;
 }
 
 .team-member img {
@@ -48,12 +48,12 @@ h1 {
 }
 
 .team-member h2 {
-    font-size: 20px;
+    font-size: 1.5em;
     margin: 10px 0;
 }
 
 .team-member p {
-    font-size: 16px;
+    font-size: 1.1em;
 }
 
 .eliel {
