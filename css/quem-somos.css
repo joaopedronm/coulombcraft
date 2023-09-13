@@ -18,7 +18,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 2em 10em;
+    margin: 2em 15em;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
