@@ -27,7 +27,14 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px 0px;
     text-align: center;
+<<<<<<< HEAD
     /* margin: 2em 10em; */
+=======
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 2em 15em;
+>>>>>>> c32def0fbd1680431b95f9833c67eeaae1688359
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
