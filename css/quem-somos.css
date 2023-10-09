@@ -1,115 +1,123 @@
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f2f2f2;
-    margin: 0;
-    padding: 0;
+/* ------------ GOOGLE FONTS ------------ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* ------------ VARIABLES ------------ */
+:root{
+  /* FONT */
+  --font: 'Poppins', sans-serif;
+
+  /* COLORS */
+  --color: #565656;
+  --bg-color: #f4f4f4;
 }
 
-h1 {
-    font-size: 24px;
+/* ------------ BASE ------------ */
+*{
+  /* margin: 0; */
+  /* padding: 0; */
+  box-sizing: border-box;
 }
 
-.team {
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-around;
-    margin-top: 2em;
+body{
+  margin: 0;
+  font-family: var(--font);
+  /* height: 100vh; */
 }
 
-.team-member {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 0px;
-    text-align: center;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+/* ----------- SLIDER ------------ */
+.swiper{
+  width: 100%;
 }
 
-.team-member:hover {
-    transform: scale(1.02);
-    opacity: 0.97;
+.swiper-wrapper{
+  width: 100%;
+  height: 35em;
+  display: flex;
+  align-items: center;
 }
 
-.team-member img {
-    width: 40%;
-    box-shadow: -10px 0px 15px -10px #3b3b3b, /* Sombra à esquerda (vermelha) */
-        10px 0px 15px -10px #a2a2a2;
+.card{
+  width: 20em;
+  height: 90%;
+  background-color: #fff;
+  border-radius: 2em;
+  box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+  padding: 2em 1em;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 2em;
 }
 
-.team-member .informations {
-    width: 80%;
+.swiper-slide:not(.swiper-slide-active){
+  filter: blur(1px);
 }
 
-
-.team-member .about {
-    font-size: .9em;
+.card__image{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  border: 5px solid var(--color);
+  padding: 3px;
+  margin-bottom: 2em;
 }
 
-.team-member img {
-    max-width: 100%;
-    border-radius: 50%;
+.card__image img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.team-member h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
+.card__content{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.team-member p {
-    font-size: 1.1em;
+.card__title{
+  font-size: 1.3rem;
+  font-weight: 500;
+  position: relative;
+  line-height: 24px;
+  /* top: .2em; */
+  /* line-height: 2rem; */
+  text-align: center;
 }
 
-.eliel {
-    -webkit-flex-direction: row-reverse;
-    flex-direction: row-reverse;
+.card__name{
+  margin-top: .4em;
+  color: var(--color);
 }
 
-/* QUERIES */
-
-@media (max-width: 768px) {
-    .team {
-        /* display: block; */
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .team-member {
-        margin: 2em;
-        width: 80%;
-    }
-
-    .team-member img {
-        width: 25%;
-    }
-
-    .team-member .informations {
-        width: 90%;
-    }
+.card__text{
+  text-align: center;
+  font-size: .9rem;
+  margin: 1em 0;
 }
 
-@media (max-width: 426px) {
+.card__btn{
+  background-color: var(--color);
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  padding: .5em;
+  border-radius: .5em;
+  margin-top: .5em;
+  cursor: pointer;
+}
 
-    .team-member img {
-        width: 50%;
-    }
+.socials a {
+  list-style: none;
+  text-decoration: none;
+}
 
-    .team-member .informations {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 90%;
-    }
-
-    .team-member .informations p {
-        font-size: .8em;
-        text-align: center;
-    }
+.socials a i {
+  color: #565656;
+  font-size: 1.25rem;
+  margin-right: .6em;
 }

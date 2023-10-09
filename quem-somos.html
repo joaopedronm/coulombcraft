@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/menu.css">
-    <link rel="stylesheet" href="./css/quem-somos.css">
     <link rel="shortcut icon" type="imagex/png" href="./charges.png">
+
+    <!-- UNICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/quem-somos.css">
+    <link rel="stylesheet" href="./css/menu.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
@@ -26,39 +34,112 @@
         </nav>
     </header>
 
-    <div class="team">
-        <div class="team-member">
-            <img src="./img/joao-pedro.png" alt="Membro 1">
-            <div class="informations">
-                <h2>João Pedro</h2>
-                <p>Físico e Desenvolvedor Full-Stack</p>
-                <p class="about">Desde a infância, demonstrava um fascínio genuíno pela ciência e tecnologia que apenas cresceu ao longo dos anos. Meu percurso acadêmico culminou com a graduação em Física, onde mergulhou ainda mais profundamente nos mistérios do universo. No entanto, minha jornada não parou por aí. Hoje, dedico parte do meu tempo para unir esses dois campos que sempre me intrigaram: a ciência e a tecnologia, através da programação.</p>
-            </div>
-        </div>
-    
-        <div class="team-member">
-            <img src="./img/eliel.jpeg" alt="Membro 2">
-            <div class="informations">
-                <h2>Eliel</h2>
-                <p>Estudante</p>
-                <p class="about">Duas das minhas grandes paixões na vida são a Física e a tecnologia. Desde que me lembro, tenho sido fascinado pelo mundo da ciência e como as leis naturais regem tudo ao nosso redor. A Física, em particular, sempre me cativou, e tenho um interesse especial em explorar conceitos desde a mecânica clássica até a teoria da relatividade de Einstein.</p>
-            </div>
-        </div>
-    
-    
-        <div class="team-member">
-            <img src="./img/matheus.jpeg" alt="Membro 3">
-            <div class="informations">
-                <h2>Matheus Ribeiro</h2>
-                <p>Estudante</p>
-                <p class="about">Meu nome é Matheus e estou atualmente no terceiro ano do ensino médio. Desde que iniciei minha jornada acadêmica aqui, tenho demonstrado um profundo interesse pela área de ciência e tecnologia. Acredito que o futuro está intimamente ligado a esses campos e sempre que tenho a oportunidade me envolvo em projetos desse ramo em busca de desvendar mistérios e construir coisas novas.</p>
-            </div>
-        </div>
-    </div>
+    <section class="swiper mySwiper">
 
-    <!-- Navbar -->
+        <div class="swiper-wrapper">
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="./img/joao-pedro.png" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Físico e Desenvolvedor Full-Stack</span>
+              <span class="card__name">João Pedro</span>
+              <p class="card__text">Minha jornada acadêmica me proporcionou uma sólida base em ciências exatas e uma mentalidade analítica, que agora aplico no incrível campo do desenvolvimento web.</p>
+              <div class="socials">
+                <a href="https://www.facebook.com" target="_blank" class="footer__social">
+                    <i class="uil uil-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="footer__social">
+                    <i class="uil uil-instagram"></i>
+                </a>
+                <a href="https:://www.twitter.com" target="_blank" class="footer__social">
+                    <i class="uil uil-twitter-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="./img/eliel.jpeg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Estudante</span>
+              <span class="card__name">Eliel Bezerra</span>
+              <p class="card__text">Um entusiasta do ensino médio apaixonado por ciência e tecnologia.</p>
+
+              <div class="socials">
+                <a href="https://www.facebook.com" target="_blank" class="footer__social">
+                    <i class="uil uil-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="footer__social">
+                    <i class="uil uil-instagram"></i>
+                </a>
+                <a href="https:://www.twitter.com" target="_blank" class="footer__social">
+                    <i class="uil uil-twitter-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="card swiper-slide">
+            <div class="card__image">
+              <img src="./img/matheus.jpeg" alt="card image">
+            </div>
+    
+            <div class="card__content">
+              <span class="card__title">Estudante</span>
+              <span class="card__name">Matheus Ribeiro</span>
+              <p class="card__text">Um estudante dedicado e curioso, cujo fascínio pela ciência e tecnologia me motiva a explorar constantemente o mundo das descobertas e inovações.</p>
+
+              <div class="socials">
+                    <a href="https://www.facebook.com" target="_blank" class="footer__social">
+                        <i class="uil uil-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank" class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https:://www.twitter.com" target="_blank" class="footer__social">
+                        <i class="uil uil-twitter-alt"></i>
+                    </a>
+                </div>
+            </div>
+          </div>
+    
+        </div>
+      </section>
+
+      <!-- Navbar -->
     <nav>
         <p>© Desenvolvido por João Pedro, Eliel e Matheus.</p>
     </nav>
+    
+    <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          effect: "coverflow",
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+          },
+        });
+      </script>
+
+
 </body>
 </html>
