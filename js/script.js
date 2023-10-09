@@ -14,8 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function resetSpheres() {
     sphere1.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
     sphere2.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
-    // sphere1.style.transform = '';
-    // sphere2.style.transform = '';
     sphere1.classList.add('none');
     sphere2.classList.add('none');
   }
