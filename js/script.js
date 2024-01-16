@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // A SEÇÃO ABAIXO CAPTURA ALGUNS ELEMENTOS DO HTML
+
   const calculateButton = document.getElementById('calculate');
   const resultDisplay = document.getElementById('result');
   const completeResult = document.getElementById('complete-result')
@@ -10,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sphere1.classList.remove('none');
   sphere2.classList.remove('none');
 
-  // Função para redefinir as esferas
+  // A FUNÇÃO ABAIXO REMOVE AS CLASSES DAS ESFERAS. É UTILIZADA PARA COMPLEMENTAR O REINÍCIO DA ANIMAÇÃO
   function resetSpheres() {
     sphere1.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
     sphere2.classList.remove('sphere-strong', 'sphere-medium', 'sphere-weak');
@@ -18,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     sphere2.classList.add('none');
   }
 
+
+  // A FUNÇÃO ABAIXO VAI CALCULAR A FORÇA ELÉTRICA RESULTANTE DE ACORDO COM OS PARÂMETROS PASSADOS PELO USUÁRIO.
+  // ------ INÍCIO DA LÓGICA MATEMÁTICA -------
 
   calculateButton.addEventListener('click', () => {
 
@@ -37,13 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const distance = parseFloat(document.getElementById('distance').value) / distanceOptions[unityDistance]; // m, cm ou mm
 
-    // Verificar se os campos estão em branco
-
+    
     const campoInput1 = document.getElementById('q1').value.trim()
     const campoInput2 = document.getElementById('q2').value.trim()
-
+    
     const input1 = document.getElementById('q1')
     const input2 = document.getElementById('q2')
+
+    // A CONDIÇÃO ABAIXO VERIFICAM SE OS CAMPOS ESTÃO EM BRANCO
 
     if(campoInput1 === '') {
       alert('Campo obrigatório. Por favor, preencha o campo.')
@@ -63,9 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const q1Coulombs = q1 * Math.pow(10, -3 * (exponentOptions[q1Prefix] || 12));
       const q2Coulombs = q2 * Math.pow(10, -3 * (exponentOptions[q2Prefix] || 12));
-
-      // const q1Coulombs = q1 * Math.pow(10, -3 * (q1Prefix === 'm' ? 1 : (q1Prefix === 'u' ? 2 : (q1Prefix === 'n' ? 3 : 12))));
-      // const q2Coulombs = q2 * Math.pow(10, -3 * (q2Prefix === 'm' ? 1 : (q2Prefix === 'u' ? 2 : (q2Prefix === 'n' ? 3 : 12))));
   
       const k = 8.99 * Math.pow(10, 9); // Constante de Coulomb (N m^2 / C^2)
       const force = k * (q1Coulombs * q2Coulombs) / Math.pow(distance, 2);
@@ -83,8 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
         completeResult.innerHTML = `Valor mais preciso: ${force} N`
       }
 
+      // ------ FIM DA LÓGICA MATEMÁTICA -------
+
+
+      // -----------------------------------------------------------------
+
+
+      // O CÓDIGO ABAIXO É O RESPONSÁVEL PELAS REGRAS DA ANIMAÇÃO DE ATRAÇÃO OU REPULSÃO DAS CARGAS ELÉTRICAS
+
       
-      // Update sphere positions based on charges
+      // O TRECHO ABAIXO DEFINE OS ESTILOS (CSS) DAS ESFERAS COMO PRÓTONS OU ELÉTRONS DE ACORDO COM O VALOR
       const q1Class = q1 > 0 ? 'proton' : 'electron';
       const q2Class = q2 > 0 ? 'proton' : 'electron';
       sphere1.className = `sphere sphere1 ${q1Class}`;
@@ -110,7 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
         sphere2.innerHTML = ''
       }
 
-      // Animação das cargas elétricas:
+      // O CÓDIGO ABAIXO É O RESPONSÁVEL POR FAZER AS CARGAS SE MOVEREM EM DIREÇÃO UMA À OUTRA OU VICE-VERSA, E UTILIZA ALGUMAS PROPRIEDADES
+      // CSS DENTRO DO JAVASCRIPT PRA CRIAR ESSA ANIMAÇÃO
 
       const attractionCharges = () => {
         if (window.matchMedia("(max-width: 768px)").matches) {
